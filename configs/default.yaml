@@ -1,0 +1,68 @@
+# Olist Marketplace Analytics — default configuration
+#
+# Override any of these by passing --config path/to/your.yaml to the CLI,
+# or by passing a path to Config.from_yaml() in your own scripts.
+
+# Where the Olist CSVs live. Default assumes Kaggle's dataset path.
+# Replace with a local path if you've downloaded the data.
+data_dir: C:/Users/user/Downloads/repo/kaggle/input/datasets/organizations/olistbr/brazilian-ecommerce/
+
+# Where generated figures and tables are written.
+output_dir: C:/Users/user/Downloads/repo/reports/figures/
+
+# Analytical thresholds — kept here so they're auditable, not buried in code.
+thresholds:
+  # § 1.4 — months with fewer orders than this are excluded from the
+  # non-completion trend (tiny denominators give misleading spikes).
+  edge_month_min_orders: 500
+
+  # § 3.1 — sellers with fewer than this many orders are excluded from the
+  # quality panels because one or two reviews aren't a reliable signal.
+  seller_min_orders_for_quality: 10
+
+  # § 3.2 — cohorts smaller than this are dropped from the survival heatmap
+  # to keep retention percentages stable.
+  cohort_min_sellers: 30
+
+  # § 5.2 — product groups need at least this many buyers to appear on the
+  # same-category repeat-rate chart.
+  group_min_buyers: 500
+
+  # Inactivity threshold (days) for "merchant churn" KPI.
+  merchant_churn_days: 90
+
+  # Statuses that count as "incomplete" (canceled or unavailable orders).
+  incomplete_order_statuses:
+    - canceled
+    - unavailable
+
+# IBGE 2018 state population estimates (millions).
+# Used as the per-capita denominator in geographic analysis.
+state_population_m:
+  SP: 45.5
+  MG: 21.0
+  RJ: 17.2
+  BA: 14.8
+  RS: 11.3
+  PR: 11.4
+  PE: 9.5
+  CE: 9.0
+  PA: 8.5
+  SC: 7.1
+  MA: 7.0
+  GO: 7.0
+  AM: 4.1
+  ES: 4.0
+  PB: 4.0
+  RN: 3.5
+  MT: 3.4
+  AL: 3.3
+  PI: 3.3
+  DF: 3.0
+  MS: 2.8
+  SE: 2.3
+  RO: 1.8
+  TO: 1.6
+  AC: 0.9
+  AP: 0.8
+  RR: 0.6

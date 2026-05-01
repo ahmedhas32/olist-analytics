@@ -1,5 +1,10 @@
 # Olist Marketplace Analytics
 
+
+A modularized version of 
+
+https://www.kaggle.com/code/ahmedhas93/olist-marketplace-analytics
+
 > A decision-maker's view of the [Olist Brazilian e-commerce dataset](https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce) — structured around the questions a platform CEO or COO would actually ask.
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
